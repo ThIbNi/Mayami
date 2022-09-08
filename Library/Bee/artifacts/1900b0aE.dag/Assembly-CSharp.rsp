@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Basic.cs"
 "Assets/Script/Bullet.cs"
+"Assets/Script/Enemy.cs"
 "Assets/Script/Gune1Fire.cs"
 "Assets/Script/GuneUpPlayer.cs"
 "Assets/Script/Player.cs"
