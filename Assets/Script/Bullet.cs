@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private LayerMask BulletMask;      // Что можно пробить
 
     public bool boolCloneBulet = false;
+    public GameObject EfectShotWall;
 
     void Update()
     {
@@ -26,6 +27,18 @@ public class Bullet : MonoBehaviour
 
             if(LifeTime <= 0 ^ Distance <= 0)
                 Destroy(this.gameObject);
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            Instantiate(EfectShotWall, transform.position, transform.rotation);
+            Debug.Log(transform.rotation.y);
+            Destroy(this.gameObject);
+
 
         }
     }

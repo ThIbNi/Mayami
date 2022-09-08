@@ -8,9 +8,12 @@ public class GuneUpPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject CurentGun;    // Пушка в руке
     [SerializeField] private Transform UpPoint;       // Место установки при подборе
-    private GameObject GuneEnterTriger = null;
     [SerializeField] private Text HudUIAmmo;
+    [SerializeField] private float StrongForce = 20f;
+
+    private GameObject GuneEnterTriger = null;
     private Gune1Fire ActualGunScript;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,7 +50,8 @@ public class GuneUpPlayer : MonoBehaviour
                 CurentGun.transform.GetChild(i).SetParent(CurentGun.transform, true);
             }
 
-            CurentGun.AddComponent<Rigidbody>();
+            Rigidbody RbCurentGun = CurentGun.AddComponent<Rigidbody>();
+            RbCurentGun.AddForce(transform.forward * StrongForce, ForceMode.Impulse);
             CurentGun = null;
 
             ActualGunScript = null;
@@ -80,7 +84,7 @@ public class GuneUpPlayer : MonoBehaviour
         }
         else
         {
-            HudUIAmmo.text = "Твоя мать шлюха!";
+            HudUIAmmo.text = "Нет пушки!";
         }
     }
 }

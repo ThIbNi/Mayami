@@ -21,25 +21,18 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        //MainCamera.transform.position = Vector3.SmoothDamp(transform.position, rb.position + new Vector3(0f, 1110f, 0f), ref velocity, smoothTime);
-        MainCamera.transform.position = rb.position + new Vector3(0f, 50f, 0f);
-    }
-
-    void Update()
-    {
-        
         float moveSpeed = _moveSpeed;
 
         float VectorMoveX = Input.GetAxis("Horizontal");
         float VectorMoveZ = Input.GetAxis("Vertical");
 
-        float moveX = rb.position.x + moveSpeed * VectorMoveX * Time.deltaTime ;
-        float moveZ = rb.position.z + moveSpeed * VectorMoveZ * Time.deltaTime ;
+        float moveX = rb.position.x + moveSpeed * VectorMoveX;
+        float moveZ = rb.position.z + moveSpeed * VectorMoveZ;
 
-        rb.MovePosition(new Vector3(moveX, rb.position.y, moveZ));
-   
-        
+        //rb.MovePosition(new Vector3(moveX, rb.position.y, moveZ));
+        rb.velocity = new Vector3( VectorMoveX, 0f, VectorMoveZ ) * moveSpeed;
 
+        MainCamera.transform.position = rb.position + new Vector3(0f, 50f, 0f);
     }
 
 }
