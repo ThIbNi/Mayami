@@ -25,6 +25,7 @@ public static class GlobalVariables
 {
 
     public static bool TimeRun = false; // Идет ли время в мире
+    public static float SlowSpeedСoefficient = 0.05f; // Коэфициент замедления времени
 
     public static bool Rotate = false;
     public static bool Fire   = false;

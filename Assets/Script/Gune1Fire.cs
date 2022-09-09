@@ -48,10 +48,13 @@ public class Gune1Fire : MonoBehaviour
 
             if (CurentTimeBetweenShots > 0)
                     CurentTimeBetweenShots -= Time.deltaTime;
-            else if(ReloadTime > 0 & GlobalVariables.TimeRun)
+            else if(ReloadTime > 0)
             {
 
-                ReloadTime -= Time.deltaTime;
+                if (GlobalVariables.TimeRun)
+                    ReloadTime -= Time.deltaTime;
+                else
+                    ReloadTime -= Time.deltaTime * GlobalVariables.SlowSpeed—oefficient;
 
                 if (ReloadTime <= 0)
                 {

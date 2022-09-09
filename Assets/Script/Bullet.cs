@@ -11,14 +11,17 @@ public class Bullet : MonoBehaviour
 
     public bool boolCloneBulet = false;
     public GameObject EfectShotWall;
-
+    private float moveSpeed = 0;
     void Update()
     {
 
-        if (boolCloneBulet & GlobalVariables.TimeRun)
+        if (boolCloneBulet)
         {
             bool HitInfo = Physics.Raycast(transform.position, transform.right, Distance, BulletMask);
-            float moveSpeed = Speed * Time.deltaTime;
+            if (GlobalVariables.TimeRun)
+                moveSpeed = Speed * Time.deltaTime;
+            else
+                moveSpeed = Speed * Time.deltaTime * GlobalVariables.SlowSpeed—oefficient;
 
             transform.Translate(Vector3.forward * moveSpeed);
 
