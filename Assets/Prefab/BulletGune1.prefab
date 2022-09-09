@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124ee29aff463504e8d231330b68b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 50
+  Speed: 25
   LifeTime: 60
   Distance: 200
   BulletMask:

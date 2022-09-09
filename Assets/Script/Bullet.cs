@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
 
-        if (boolCloneBulet)
+        if (boolCloneBulet & GlobalVariables.TimeRun)
         {
             bool HitInfo = Physics.Raycast(transform.position, transform.right, Distance, BulletMask);
             float moveSpeed = Speed * Time.deltaTime;

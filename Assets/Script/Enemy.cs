@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         ActualDistance = Mathf.Abs(ActualDistance) + (Mathf.Abs(Mathf.Abs(DistanceToPlayer.z) - Mathf.Abs(CoordsEnemy.z)));
         if (ActualDistance < MaxDistance)
         {
-            if(ActualDistance < MinDistance)
+            if (ActualDistance < MinDistance)
             {
                 navMeshAgent.SetDestination(CoordsEnemy);
             }
@@ -40,6 +40,6 @@ public class Enemy : MonoBehaviour
             {
                 navMeshAgent.SetDestination(DistanceToPlayer);
             }
-        }       
+        }
     }
 }

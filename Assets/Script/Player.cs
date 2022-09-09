@@ -33,6 +33,15 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector3( VectorMoveX, 0f, VectorMoveZ ) * moveSpeed;
 
         MainCamera.transform.position = rb.position + new Vector3(0f, 50f, 0f);
+
+        GlobalVariables.Move = (Math.Abs(VectorMoveX) + Math.Abs(VectorMoveZ)) != 0;
+
+    }
+
+    private void LateUpdate()
+    {
+        GlobalVariables.TimeRun = GlobalVariables.Rotate | GlobalVariables.Move | GlobalVariables.Fire;
+        Debug.Log("1.TimeRun - " + GlobalVariables.TimeRun + " 2.Rotate - " + GlobalVariables.Rotate + " 3.Move - " + GlobalVariables.Move + " 4.Fire - " + GlobalVariables.Fire);
     }
 
 }

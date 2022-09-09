@@ -20,3 +20,13 @@ public static class ExtensionMethods
         }
     }
 }
+
+public static class GlobalVariables
+{
+
+    public static bool TimeRun = false; // »дет ли врем€ в мире
+
+    public static bool Rotate = false;
+    public static bool Fire   = false;
+    public static bool Move   = false;
+}
