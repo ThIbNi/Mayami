@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour
     {
         DistanceToPlayer = player.transform.position;
         CoordsEnemy = transform.position;
-        ActualDistance = Mathf.Abs(DistanceToPlayer.x) - Mathf.Abs(CoordsEnemy.x);
-        ActualDistance = Mathf.Abs(ActualDistance) + (Mathf.Abs(Mathf.Abs(DistanceToPlayer.z) - Mathf.Abs(CoordsEnemy.z)));
+        ActualDistance = Vector3.Distance(DistanceToPlayer, CoordsEnemy);
+
         if (ActualDistance < MaxDistance)
         {
             if (ActualDistance < MinDistance)
